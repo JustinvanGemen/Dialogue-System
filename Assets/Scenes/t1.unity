@@ -247,6 +247,56 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 95909780}
+--- !u!1 &244465794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 244465795}
+  - component: {fileID: 244465796}
+  m_Layer: 0
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244465795
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244465794}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -60.73746, y: -191, z: -3.92572}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1506430337}
+  - {fileID: 1736412461}
+  - {fileID: 1937109111}
+  - {fileID: 1052980882}
+  m_Father: {fileID: 901002573}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &244465796
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244465794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96eb69e3adb1feb4b94e83c5fb292810, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &300646933
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,10 +445,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1248402404}
-  - {fileID: 1506430337}
-  - {fileID: 1736412461}
-  - {fileID: 1937109111}
-  - {fileID: 1052980882}
+  - {fileID: 244465795}
   - {fileID: 955217003}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -439,11 +486,11 @@ RectTransform:
   m_Children:
   - {fileID: 1393923236}
   m_Father: {fileID: 901002573}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236, y: 144}
+  m_AnchoredPosition: {x: 2, y: 144}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &955217004
@@ -458,10 +505,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogue:
-    Name: Mans not hot
+    Name: The Man
     Sentences:
-    - The Ting Go Skraaa
-    - pop pop purru pum
+    - "Man\u2019s got sauce. You don\u2019t force the sauce."
+    - "Sauce is something, you either have it or you don\u2019t."
+    - "Can you ask an egg, \u201CHow do you have your yolk?\u201D You can\u2019t."
+    - "Either man\u2019s got the yolk, or man ain\u2019t got the yolk."
+    - "Man\u2019s got the yolk."
+    - "Can you ask Heinz how you make ketchup? You can\u2019t."
+    - "Can you ask Heinz how you make baked beans? You can\u2019t."
+    - "Can you ask Heinz, \u201CHow does man make mayonnaise?\u201D You can\u2019t."
+    - "Can you ask them about how you make salad cream? You can\u2019t."
+    - How you gonna ask a man with sauce, how you get sauce?
+    - "Either man\u2019s got sauce, or man\u2019s got no sauce."
+    - "And I\u2019ve got sauce."
 --- !u!114 &955217005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,16 +629,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1052980881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9257202}
   m_LocalScale: {x: 0.51981145, y: 0.89758533, z: 1}
   m_Children:
   - {fileID: 95909781}
-  m_Father: {fileID: 901002573}
-  m_RootOrder: 4
+  m_Father: {fileID: 244465795}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90.9, y: -138.6}
+  m_AnchoredPosition: {x: 243.73746, y: -64.013}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1052980883
@@ -623,8 +680,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 955217004}
-        m_MethodName: StartDialogue
+      - m_Target: {fileID: 1819170890}
+        m_MethodName: DisplayNextSentence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -878,16 +935,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1506430336}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8125, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9257202}
+  m_LocalScale: {x: 4.6757812, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 901002573}
-  m_RootOrder: 1
+  m_Father: {fileID: 244465795}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.6, y: -106.6}
+  m_AnchoredPosition: {x: 57.13746, y: -32.012993}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506430338
@@ -947,16 +1004,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1736412460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9257202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 901002573}
-  m_RootOrder: 2
+  m_Father: {fileID: 244465795}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52, y: -80.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -86.26254, y: 0.5870056}
+  m_SizeDelta: {x: 160, y: 24.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736412462
 MonoBehaviour:
@@ -1024,8 +1081,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84cf3e3882ca6b54bbcab62ea3eec23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 1736412462}
-  _dialogueText: {fileID: 1937109112}
+  _name: {fileID: 1736412462}
+  _dialogue: {fileID: 1937109112}
+  _animator: {fileID: 244465796}
 --- !u!4 &1819170891
 Transform:
   m_ObjectHideFlags: 0
@@ -1063,16 +1121,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1937109110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9257202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 901002573}
-  m_RootOrder: 3
+  m_Father: {fileID: 244465795}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52, y: -103.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 14.827457, y: -41.812996}
+  m_SizeDelta: {x: 369.05, y: 62.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937109112
 MonoBehaviour:

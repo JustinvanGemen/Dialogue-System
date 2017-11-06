@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 namespace _Scripts
 {
-	public class DialogueManager : MonoBehaviour {
-
-		[SerializeField]private Text _nameText;
-		[SerializeField]private Text _dialogueText;
-		//TODO: Make animations to take care of the textbox visibility.
-		//Een Serialized Animator 
+	public class DialogueManager : MonoBehaviour
+	{
+		[SerializeField]private Text _name;
+		[SerializeField]private Text _dialogue;
+		[SerializeField] private Animator _animator;
 
 		private Queue<string> _sentences;
 
@@ -21,9 +20,9 @@ namespace _Scripts
 		//Starts up the Dialogue by 'opening' the dialogue box and Queuing up the sentences
 		public void StartDialogue (Dialogue dialogue)
 		{
-			//Animator Bool openDialogue naar true
-
-			_nameText.text = dialogue.Name;
+			
+			_animator.SetBool("textOpen", true);
+			_name.text = dialogue.Name;
 
 			_sentences.Clear();
 
@@ -44,7 +43,6 @@ namespace _Scripts
 				return;
 			}
 			
-			Debug.Log("Passie");
 			var sentence = _sentences.Dequeue();
 			StopAllCoroutines();
 			StartCoroutine(TypeSentence(sentence));
@@ -53,18 +51,18 @@ namespace _Scripts
 		//Makes the text appear in the dialogue box letter by letter.
 		private IEnumerator TypeSentence (string sentence)
 		{
-			_dialogueText.text = "";
+			_dialogue.text = "";
+			if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("up")) yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length+_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
 			foreach (var letter in sentence.ToCharArray())
 			{
-				_dialogueText.text += letter;
-				yield return new WaitForSeconds(0.05f);
+				_dialogue.text += letter;
+				yield return new WaitForSeconds(0.02f);
 			}
 		}
 		
-		//Soon2be animation for the dialogue box to leave the screen.
 		private void EndDialogue()
 		{
-			//Animator Bool openDialogue naar false
+			_animator.SetBool("textOpen", false);
 		}
 
 	}
