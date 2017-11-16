@@ -9,10 +9,17 @@ namespace _Scripts
 	{
 		[SerializeField]private Text _name;
 		[SerializeField]private Text _dialogue;
-		[SerializeField] private Animator _animator;
+		[SerializeField]private Animator _animator;
 
 		private Queue<string> _sentences;
 
+		private bool _notPaused = true;
+
+		public bool GetPaused
+		{
+			get { return _notPaused; }
+		}
+		
 		private void Start () {
 			_sentences = new Queue<string>();
 		}
@@ -20,8 +27,8 @@ namespace _Scripts
 		//Starts up the Dialogue by 'opening' the dialogue box and Queuing up the sentences
 		public void StartDialogue (Dialogue dialogue)
 		{
-			
 			_animator.SetBool("textOpen", true);
+			_notPaused = false;
 			_name.text = dialogue.Name;
 
 			_sentences.Clear();
@@ -52,7 +59,8 @@ namespace _Scripts
 		private IEnumerator TypeSentence (string sentence)
 		{
 			_dialogue.text = "";
-			if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("up")) yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length+_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+			//if (!_animator.GetCurrentAnimatorStateInfo(0).IsName("up")) yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length+_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+			yield return new WaitForSeconds(0.5f);
 			foreach (var letter in sentence.ToCharArray())
 			{
 				_dialogue.text += letter;
@@ -62,6 +70,7 @@ namespace _Scripts
 		
 		private void EndDialogue()
 		{
+			_notPaused = true;
 			_animator.SetBool("textOpen", false);
 		}
 
